@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charles Portfolio</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Base animated gradient background */
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(90deg, #ffffff, #f0f0f0);
+      background-size: 200% 200%;
+      animation: bgShift 20s ease infinite;
+    }
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Frosted glass overlay */
+    .glassy-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(20px);
+      z-index: 0;
+    }
+
+    /* Glassy floating shapes (dark for visibility) */
+    .blob {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      mix-blend-mode: multiply;
+      transition: top 8s ease-in-out, left 8s ease-in-out;
+      z-index: 1;
+    }
+
+    /* PS2-style horizontal menu */
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 3rem;
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+    .nav-list a {
+      display: inline-block;
+      text-decoration: none;
+      color: #000;
+      font-size: 2rem;
+      letter-spacing: 0.1em;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: scale(1);
+    }
+    /* Fade out others on hover */
+    .nav-list:hover a { opacity: 0.3; }
+    /* Highlight and grow hovered item */
+    .nav-list a:hover {
+      opacity: 1;
+      transform: scale(1.3);
+      text-shadow: 0 0 4px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Frosted glass layer -->
+  <div class="glassy-bg"></div>
+
+  <!-- Glassy background shapes -->
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+
+  <!-- Navigation menu -->
+  <ul class="nav-list">
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="story.html">Story</a></li>
+  </ul>
+
+  <script>
+    const blobs = document.querySelectorAll('.blob');
+    // Initialize random positions and sizes
+    blobs.forEach(blob => {
+      const size = Math.random() * 200 + 100;
+      blob.style.width = `${size}px`;
+      blob.style.height = `${size}px`;
+      blob.style.top = `${Math.random() * 100}vh`;
+      blob.style.left = `${Math.random() * 100}vw`;
+    });
+    // Move blobs around full screen periodically
+    setInterval(() => {
+      blobs.forEach(blob => {
+        blob.style.top = `${Math.random() * 100}vh`;
+        blob.style.left = `${Math.random() * 100}vw`;
+      });
+    }, 8000);
+  </script>
+</body>
+</html>
