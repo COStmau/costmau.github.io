@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charles - My Story</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Base animated gradient background */
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+    body {
+      background: linear-gradient(90deg, #ffffff, #f0f0f0);
+      background-size: 200% 200%;
+      animation: bgShift 20s ease infinite;
+      padding: 2rem;
+    }
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Content styling */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .story-section {
+      margin-bottom: 3rem;
+    }
+
+    .story-title {
+      color: #444;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .story-content {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #555;
+      border-left: 3px solid #ddd;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    /* Navigation */
+    .nav {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .nav a:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="projects.html">Projects</a>
+  </div>
+
+  <div class="container">
+    <h1>My Story</h1>
+    
+    <div class="story-section">
+      <h2 class="story-title">The Beginning</h2>
+      <div class="story-content">
+        <!-- Add your story content here -->
+        <p>Share your journey, what inspired you to get into your field, and what drives you.</p>
+      </div>
+    </div>
+
+    <div class="story-section">
+      <h2 class="story-title">Key Moments</h2>
+      <div class="story-content">
+        <!-- Add key moments or milestones -->
+        <p>Highlight the pivotal moments that shaped your career and personal growth.</p>
+      </div>
+    </div>
+
+    <div class="story-section">
+      <h2 class="story-title">Vision & Goals</h2>
+      <div class="story-content">
+        <!-- Add your vision and future goals -->
+        <p>Share your aspirations and what you're working towards.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 
